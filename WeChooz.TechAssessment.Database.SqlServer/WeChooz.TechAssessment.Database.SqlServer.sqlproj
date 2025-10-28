@@ -54,5 +54,12 @@
     <None Include="WeChooz.TechAssessment.Database.SqlServer.publish.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="dbo\Course.sql" />
+    <None Include="dbo\Participant.sql" />
+    <None Include="dbo\Session.sql" />
+    <None Include="dbo\_Relashionship.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dbo" />
   </ItemGroup>
 </Project>
