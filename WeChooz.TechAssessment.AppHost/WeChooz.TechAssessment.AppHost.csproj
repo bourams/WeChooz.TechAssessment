@@ -12,6 +12,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\WeChooz.TechAssessment.Api\WeChooz.TechAssessment.Api.csproj" />
 		<ProjectReference Include="..\WeChooz.TechAssessment.Database.SqlServer\WeChooz.TechAssessment.Database.SqlServer.sqlproj" />
 		<ProjectReference Include="..\WeChooz.TechAssessment.Web\WeChooz.TechAssessment.Web.csproj" />
 	</ItemGroup>
