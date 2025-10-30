@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using WeChooz.TechAssessment.Api.Persistance.DbContexts;
 using WeChooz.TechAssessment.Api.Persistance.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 
 // Add services to the container.
-var sqlServerConnectionString = builder.Configuration.GetConnectionString("formation") ?? throw new InvalidOperationException("Connection string 'formation' not found.");
+
+builder.Services.AddDbContext<FormationDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("formation")
+        ?? throw new InvalidOperationException("Connection string 'formation' not found.");
+
+    options.UseSqlServer(connectionString);
+});
 var redisConnectionString = builder.Configuration.GetConnectionString("cache") ?? throw new InvalidOperationException("Connection string 'cache' not found.");
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
