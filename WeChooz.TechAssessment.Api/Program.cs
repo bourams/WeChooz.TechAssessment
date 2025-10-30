@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WeChooz.TechAssessment.Api.Middlewares;
 using WeChooz.TechAssessment.Api.Persistance.DbContexts;
 using WeChooz.TechAssessment.Api.Persistance.Repositories;
 
@@ -25,6 +26,8 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
@@ -32,7 +35,6 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
