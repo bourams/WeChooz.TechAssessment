@@ -1,5 +1,4 @@
-﻿using WeChooz.TechAssessment.Api.Persistance.Filters;
-using WeChooz.TechAssessment.Api.Persistance.Models;
+﻿using WeChooz.TechAssessment.Api.Persistance.Models;
 
 namespace WeChooz.TechAssessment.Api.Persistance.Repositories;
 

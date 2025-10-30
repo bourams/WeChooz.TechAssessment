@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WeChooz.TechAssessment.Api.Persistance.DbContexts;
-using WeChooz.TechAssessment.Api.Persistance.Filters;
+﻿using WeChooz.TechAssessment.Api.Persistance.DbContexts;
 using WeChooz.TechAssessment.Api.Persistance.Models;
 
 namespace WeChooz.TechAssessment.Api.Persistance.Repositories;
